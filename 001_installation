@@ -1,0 +1,47 @@
+
+#Install using the convenience script - The quickest way to get Docker installed and running
+
+
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+
+
+Add the current user to docker group 
+
+$ sudo usermod -aG docker your-user
+
+To activate the changes in the group
+$ newgrp docker 
+
+
+Verify docker 
+
+$ sudo systemctl status docker
+$ sudo systemctl start docker
+$ sudo systemctl enable docker
+
+
+$ docker run hello-world
+
+$ docker run -p 3000:80 tatum/hello-world
+
+
+chkconfig  to check whether docker is on
+$ sudo chkconfig docker on
+
+
+
+
+
+# To uninstall docker
+
+
+$ sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+
